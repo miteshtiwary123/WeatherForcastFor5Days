@@ -1,9 +1,12 @@
+from PIL import Image
 import streamlit as st
 import plotly.express as px
 from backend import get_data
 
 # Add title, text input, slider, selectbox and subheader
-st.title("Weather Forcast for the next Days")
+image = Image.open('images/mitesh.png')
+st.image(image, use_column_width=True)
+st.title("Weather Forcast for the next few days")
 place = st.text_input("Place: ")
 days = st.slider("Forcast days", min_value=1, max_value=5,
                  help="Select the number of days you want to check forcast")
